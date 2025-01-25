@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Animation Using GSAP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            color: white;
+            font-family:Roboto;
+
+        }
+        html, body {
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            overflow: hidden;
+
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            margin: 30px 50px;
+        }
+        .part {
+            display: flex;
+            /* GIVE SPACE BETWEEN CHARACTERS */
+            gap: 50px;
+        }
+        h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space:nowrap;
+            font-size: 70PX;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <h2>DHOOM</h2>
+        <div class="part">
+            <h4>Work</h4>
+            <h4>About</h4>
+            <h4>Course</h4>
+            <h4>Blog</h4>
+        </div>
+    </div>
+    <h1>Welcome to WebSite</h1>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        let tl = gsap.timeline();
+        tl.from("h2", {
+            y: -30,
+            opacity: 0,
+            duration:1,
+            delay:0.5
+        });
+        tl.from("h4", {
+            y: -30,
+            opacity: 0,
+            duration:1,
+            delay:0.5,
+            // value of stagger between 0 to 1
+            stagger:0.3
+        });
+
+        tl.from("h1", {
+            opacity: 0,
+            duration:0.2
+
+        });
+    </script>
+</body>
+</html>
